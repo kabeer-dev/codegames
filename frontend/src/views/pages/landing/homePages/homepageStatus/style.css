@@ -1,0 +1,75 @@
+#app {
+  height: 100%;
+}
+/* html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+} */
+
+.swiper {
+  width: 100% !important;
+  height: 85%;
+  margin-top: -25px;
+}
+.swiper-slide {
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .swiper {
+    margin-top: 0px;
+    height: 100% !important;
+  }
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.3;
+}
+.swiper-slide:not(.swiper-slide-active):hover {
+  opacity: 1;
+}
+
+.progress_container {
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.animation_executing {
+  animation: progress 5s linear forwards;
+  background-color: #fff;
+}
+
+.animated {
+  transform: scaleX(1);
+  animation: none;
+  background-color: #fff;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+.wait_to_animate {
+  animation: none;
+}
+
+/* animation-name: progress; */
+
+@keyframes progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

@@ -1,0 +1,31 @@
+.Customer_Feild::placeholder {
+  color: green;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.overlay {
+  display: flex;
+  /* align-items:center;
+   justify-content: center; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  border-radius: 5px;
+  width: 80%;
+}
