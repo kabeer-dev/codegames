@@ -2,9 +2,9 @@
 const AWS = require('aws-sdk');
 
 AWS.config.update({
-    accessKeyId: 'AKIA432JA3FF7UFYX3ZK',
-    secretAccessKey: '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',
-    region: 'ca-central-1'
+    accessKeyId: `${process.env.REACT_APP_AWS_ACCESS_KEY_ID}`,
+    secretAccessKey: `${process.env.REACT_APP_AWS_SECRET_ACCESS_KEY}`,
+    region: `${process.env.REACT_APP_AWS_BACKET_REGION}`
 });
 
 module.exports = AWS;

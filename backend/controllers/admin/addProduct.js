@@ -10,27 +10,32 @@ exports.getDropdownItems = async (req, res) => {
 }
 exports.getKinguinSingleProduct = async (req, res) => {
     const body = req.body;
-    try {
-        const response = await axios.get(`${process.env.KINGUIN_API_URL}/v2/products/${body.productId}`, {
-            headers: {
-                'X-Api-Key': `${process.env.KINGUIN_API_KEY}`
-            }
-        });
-        if (response.status === 200) {
-            let _id = ''
-            const checkProduct = await Product.findOne({ productId: body.productId });
-            if (!checkProduct) {
+    const checkProduct = await Product.findOne({ productId: body.productId });
+    if (checkProduct) {
+        _id = checkProduct._id.toString();
+        handleResponse(res, { _id: _id })
+    }
+    else {
+        try {
+            const response = await axios.get(`${process.env.KINGUIN_API_URL}/v2/products/${body.productId}`, {
+                headers: {
+                    'X-Api-Key': `${process.env.KINGUIN_API_KEY}`
+                }
+            });
+            if (response.status === 200) {
+                let _id = ''
                 const new_product = await Product.create(response.data);
                 _id = new_product._id.toString();
-            } else {
-                _id = checkProduct._id.toString();
+                handleResponse(res, { _id: _id })
             }
-            handleResponse(res, { _id: _id })
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            handleError(res, { message: 'Product not Founded' })
         }
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        handleError(res, { message: 'Product not Founded' })
+
+        console.log('noooo')
     }
+
 }
 exports.addKinguinSingleProductDetail = async (req, res) => {
     const body = req.body;
@@ -63,7 +68,7 @@ exports.addKinguinDnominationProductsDetail = async (req, res) => {
     for (const element of body.data.products) {
         try {
             const getProduct = await Product.findOne({ _id: element.product });
-            let customPrice = element.customPrice; 
+            let customPrice = element.customPrice;
             if (element.commission) {
                 const commissionPrice = calculateTotalPrice(getProduct.price, element.commission);
                 customPrice = commissionPrice.toFixed(2);

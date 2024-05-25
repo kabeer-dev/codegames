@@ -6,13 +6,13 @@ import HotChip from '../../../../ui-component/landing/Components/HotChip';
 import { containerSpace, skeltonColor } from '../../../../ui-component/landing/constants/style';
 import { SreviceimgSx, ServicetextSx, ServiceHeadTxt, ServicedisplayImg } from '../../../../ui-component/landing/constants/homepageSx';
 import Skelton from 'ui-component/landing/Components/Skelton';
-const img2 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog2.svg';
-const img4 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog3.svg';
-const img5 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog4.svg';
-const img6 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog5.svg';
-const img7 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog6.svg';
-const img8 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog7.svg';
-const img9 = 'https://codegame-test.s3.ca-central-1.amazonaws.com/uploads/Catalog8.svg';
+const img2 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/CatlogStream.svg';
+const img4 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/Catalog4.svg';
+const img5 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/Catalog5.svg';
+const img6 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/Catalog6.svg';
+const img7 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/Catalog7.svg';
+const img8 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/Catalog8.svg';
+const img9 = 'https://codegame-test.s3.eu-north-1.amazonaws.com/uploads/Catalog7.svg';
 const images = [img2, img4, img5, img6, img7, img8, img9];
 const IconSx = {
     color: '#FFFF',

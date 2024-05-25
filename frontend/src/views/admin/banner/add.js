@@ -129,7 +129,7 @@ const AddBanner = () => {
         //     swapId = changeableId[0]._id;
         //     swapSort = indexArray.length;
         // }
-        if (bannerImageDimensions.height < 394 || bannerImageDimensions.width < 1272) {
+        if (bannerImageDimensions.height < 390 || bannerImageDimensions.width < 1010) {
             setErrors([{ bannerImage: 'Image Dimensions are wrong!' }]);
             setLoading(false);
             return;
